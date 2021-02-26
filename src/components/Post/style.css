@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .form-inputs {
         flex-direction: column !important;
     }
@@ -11,16 +11,13 @@
     #id-btn-form {
         width: 100% !important;
     }
-}
+} */
 
 .form-container {
+    padding-top: 0;
     display: flex;
-    margin: 0;
-    padding: 0;
-    width: 100%;
     background-color: #303030;
     color: white;
-    justify-content: center;
 }
 
 .form {
@@ -99,4 +96,10 @@
     cursor: pointer;
     opacity: 0.5;
     transition: 0.5s;
+}
+
+.pdf {
+    margin: 0;
+    height: 1000px;
+    background-color: rgb(243, 243, 244);
 }

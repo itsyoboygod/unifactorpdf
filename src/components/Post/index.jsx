@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import "./phonemask.js";
-import PDF from  "../Pdf"
+import PDF from "../Pdf";
 import MyQRCode from "../QRcode";
 
 export default class Post extends Component {
@@ -13,6 +13,12 @@ export default class Post extends Component {
     contact: "",
     end: "",
     retirada: "",
+
+    product: "",
+    units: "",
+    weight: "",
+    color: "",
+
     postSubmitted: false,
   };
 
@@ -26,10 +32,10 @@ export default class Post extends Component {
     // if (!this.state.title || !this.state.content) {
     //   alert("TODOS OS CAMPOS DEVEM SER COMPLETOS !");
     // } else {
-      e.preventDefault();
-      this.setState({
-        postSubmitted: true,
-      });
+    e.preventDefault();
+    this.setState({
+      postSubmitted: true,
+    });
     // }
   };
 
@@ -186,20 +192,33 @@ export default class Post extends Component {
                 >
                   DONE
                 </button>
-            <MyQRCode/>
+                <MyQRCode />
               </fieldset>
             </form>
           </div>
-          
         ) : (
           <>
-            <PDF project={this.state.project}      firstname={this.state.firstname}
-                 lastname={this.state.lastname}  email={this.state.email}
-                 contact={this.state.contact}  end={this.state.end}
-                 retirada={this.state.retirada}  />
+            <PDF
+              className="pdf"
+              project={this.state.project}
+              firstname={this.state.firstname}
+              lastname={this.state.lastname}
+              email={this.state.email}
+              contact={this.state.contact}
+              end={this.state.end}
+              retirada={this.state.retirada}
+              product={this.state.product}
+              units={this.state.units}
+              weight={this.state.weight}
+              color={this.state.color}
+              rodape={
+                <div>
+                  <h1>Bruh 2</h1>
+                </div>
+              }
+            />
           </>
         )}
-        
       </>
     );
   }
