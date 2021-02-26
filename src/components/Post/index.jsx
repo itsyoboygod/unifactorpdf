@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import "./style.css";
 import "./phonemask.js";
+import PDF from  "../Pdf"
+import MyQRCode from "../QRcode";
 
 export default class Post extends Component {
   state = {
-    title: "",
-    content: "",
-    image: "",
+    project: "",
+    firstname: "",
+    lastname: "",
+    email: "",
+    contact: "",
+    end: "",
+    retirada: "",
     postSubmitted: false,
   };
 
@@ -17,13 +23,14 @@ export default class Post extends Component {
   };
 
   submitPost = (e) => {
-    if (!this.state.title || !this.state.content) {
-      alert("TODOS OS CAMPOS DEVEM SER COMPLETOS !");
-    } else {
+    // if (!this.state.title || !this.state.content) {
+    //   alert("TODOS OS CAMPOS DEVEM SER COMPLETOS !");
+    // } else {
+      e.preventDefault();
       this.setState({
         postSubmitted: true,
       });
-    }
+    // }
   };
 
   render() {
@@ -179,12 +186,20 @@ export default class Post extends Component {
                 >
                   DONE
                 </button>
+            <MyQRCode/>
               </fieldset>
             </form>
           </div>
+          
         ) : (
-          <PDF />
+          <>
+            <PDF project={this.state.project}      firstname={this.state.firstname}
+                 lastname={this.state.lastname}  email={this.state.email}
+                 contact={this.state.contact}  end={this.state.end}
+                 retirada={this.state.retirada}  />
+          </>
         )}
+        
       </>
     );
   }
