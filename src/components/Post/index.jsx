@@ -199,7 +199,6 @@ export default class Post extends Component {
         ) : (
           <>
             <PDF
-              className="pdf"
               project={this.state.project}
               firstname={this.state.firstname}
               lastname={this.state.lastname}
@@ -211,11 +210,6 @@ export default class Post extends Component {
               units={this.state.units}
               weight={this.state.weight}
               color={this.state.color}
-              rodape={
-                <div>
-                  <h1>Bruh 2</h1>
-                </div>
-              }
             />
           </>
         )}
