@@ -21,9 +21,22 @@ const styles = StyleSheet.create({
 const PDF = (props) => {
   return (
     <>
+<<<<<<< HEAD
+      <div className="document" ref={ref} style={{
+        display: "flex",
+        maxWidth: "793px",
+        margin: "auto",
+        backgroundColor: "brown",
+        flexDirection: "column",
+        justifyContent: "center",
+        fontFamily: "montserrat",
+        border:"solid 5px"
+      }}>
+=======
       {/* <PDFViewer>
         <View> */}
       <div size="A4" className="document" ref={ref} style={styles.page}>
+>>>>>>> 30b9f50c3b59c8d68e63b98830b170396542faf2
         <div className="header">
           <h1>header</h1>
         </div>
@@ -45,6 +58,9 @@ const PDF = (props) => {
             <h1>{props.end}</h1>
             <h2>Local de retirado do produto:</h2>
             <h1>{props.retirada}</h1>
+<<<<<<< HEAD
+        </div>
+=======
 
             <p>INFORMAÇÃO GERAL</p>
             <h2>Nome do projeto:</h2>
@@ -62,6 +78,7 @@ const PDF = (props) => {
             <h2>Local de retirado do produto:</h2>
             <h1>{props.retirada}</h1>
           </div>
+>>>>>>> 30b9f50c3b59c8d68e63b98830b170396542faf2
           <div className="right">
             <p>INFORMAÇÃO TÉCNICA</p>
             <h2>Produto:</h2>
@@ -73,6 +90,7 @@ const PDF = (props) => {
             <h2>Cor do produto:</h2>
             <h1>{props.color}</h1>
           </div>
+          
         </div>
 
         <div className="footer">
@@ -82,17 +100,24 @@ const PDF = (props) => {
           </div>
           <h3>SÃO PAULO</h3>
         </div>
+<<<<<<< HEAD
+=======
       </div>
       {/* </View>
       </PDFViewer> */}
+>>>>>>> 30b9f50c3b59c8d68e63b98830b170396542faf2
 
-      <Pdf targetRef={ref} filename="post.pdf">
+
+        <Pdf targetRef={ref} filename="form.pdf">
         {({ toPdf }) => (
-          <button id="create-pdf" onClick={toPdf} target="_blank">
+          <button id="btn-create-pdf" onClick={toPdf} target="_blank">
             Create PDF
           </button>
         )}
       </Pdf>
+      </div>
+
+      
     </>
   );
 };

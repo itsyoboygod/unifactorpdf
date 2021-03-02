@@ -4,7 +4,7 @@ import "./phonemask.js";
 import PDF from "../Pdf";
 import MyQRCode from "../QRcode";
 
-export default class Post extends Component {
+export default class Form extends Component {
   state = {
     project: "",
     firstname: "",
@@ -42,6 +42,9 @@ export default class Post extends Component {
   render() {
     return (
       <>
+      <header>
+        <title>Form</title>
+      </header>
         {!this.state.postSubmitted ? (
           <div className="form-container">
             <script src="jquery-3.5.1.min.js"></script>
@@ -210,6 +213,10 @@ export default class Post extends Component {
               units={this.state.units}
               weight={this.state.weight}
               color={this.state.color}
+<<<<<<< HEAD:src/components/Form/index.jsx
+              
+=======
+>>>>>>> 30b9f50c3b59c8d68e63b98830b170396542faf2:src/components/Post/index.jsx
             />
           </>
         )}
