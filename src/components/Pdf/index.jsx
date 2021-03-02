@@ -10,7 +10,7 @@ import {
   PDFViewer,
 } from "@react-pdf/renderer";
 
-// import { PDFViewer } from "@react-pdf/renderer";
+import { Font } from "@react-pdf/renderer";
 
 const ref = React.createRef();
 
@@ -25,36 +25,27 @@ const styles = StyleSheet.create({
 const Doc = (props) => (
   <Document>
     <Page size="A4">
-      <View
-        className="document"
-        ref={ref}
-        style={{ margin: 0, padding: 0, top: 0 }}
-      >
-        <View className="header" style={{ margin: 0, padding: 0, top: 0 }}>
-          <Text>header</Text>
+      <View>
+        <View className="header">
+          <Text style={{ margin: "auto", padding: "10px", top: 0 }}>
+            header
+          </Text>
         </View>
 
-        <View className="post">
-          <View className="left">
-            <Text>INFORMAÇÃO GERAL</Text>
+        <View
+          className="post"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            width: "100%",
+            margin: "auto",
+          }}
+          ref={ref}
+        >
+          <View className="left" style={{ margin: "auto", width: "45%" }}>
+            <Text style={{ margin: "10px" }}>INFORMAÇÃO GERAL</Text>
             <Text>Nome do projeto:</Text>
-            <Text>{props.project}</Text>
-            <Text>Nome do proprietário:</Text>
-            <Text>{props.firstname}</Text>
-            <Text>Sobrenome do proprietário:</Text>
-            <Text>{props.lastname}</Text>
-            <Text>Email do proprietário:</Text>
-            <Text>{props.email}</Text>
-            <Text>Contato do proprietário:</Text>
-            <Text>{props.contact}</Text>
-            <Text>Endereço do proprietário:</Text>
-            <Text>{props.end}</Text>
-            <Text>Local de retirado do produto:</Text>
-            <Text>{props.retirada}</Text>
-
-            <Text>INFORMAÇÃO GERAL</Text>
-            <Text>Nome do projeto:</Text>
-            <Text>{props.project}</Text>
+            <Text ref={ref}>{props.project}</Text>
             <Text>Nome do proprietário:</Text>
             <Text>{props.firstname}</Text>
             <Text>Sobrenome do proprietário:</Text>
@@ -68,8 +59,8 @@ const Doc = (props) => (
             <Text>Local de retirado do produto:</Text>
             <Text>{props.retirada}</Text>
           </View>
-          <View className="right">
-            <Text>INFORMAÇÃO TÉCNICA</Text>
+          <View className="right" style={{ margin: "auto", width: "45%" }}>
+            <Text style={{ margin: "10px" }}>INFORMAÇÃO TÉCNICA</Text>
             <Text>Produto:</Text>
             <Text>{props.product}</Text>
             <Text>Unidades:</Text>
@@ -78,15 +69,24 @@ const Doc = (props) => (
             <Text>{props.weight}</Text>
             <Text>Cor do produto:</Text>
             <Text>{props.color}</Text>
+            <Text>Cor do produto:</Text>
+            <Text>{props.color}</Text>
+            <Text>Cor do produto:</Text>
+            <Text>{props.color}</Text>
+            <Text>Cor do produto:</Text>
+            <Text>{props.color}</Text>
           </View>
         </View>
 
-        <View className="footer">
-          <View className="uni-logo">
+        <View className="footer" style={{ margin: "50px" }}>
+          <View
+            className="uni-logo"
+            style={{ flexDirection: "row", margin: "auto" }}
+          >
             <Text>UNIFACTOR</Text>
             <Text>3D</Text>
           </View>
-          <Text>SÃO PAULO</Text>
+          <Text style={{ margin: "auto", fontStyle: "italic" }}>SÃO PAULO</Text>
         </View>
       </View>
     </Page>
@@ -107,7 +107,7 @@ function PDF() {
         targetRef={ref}
         filename="post.pdf"
         height="100%"
-        width="99%"
+        width="99.7%"
       >
         <Doc />
       </PDFViewer>

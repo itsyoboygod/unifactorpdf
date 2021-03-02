@@ -1,0 +1,87 @@
+@media (max-width: 800px) {
+    .form-container form {
+        flex-direction: column !important;
+    }
+    .left {
+        width: 100% !important;
+    }
+    .right {
+        width: 100% !important;
+    }
+    #id-create-btn {
+        width: 100% !important;
+    }
+}
+
+.form-container {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.form-container form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.form-container form input {
+    display: flex;
+    height: 40px;
+    border: none;
+}
+
+.form-container form input:focus {
+    outline: solid 3px rgb(50, 159, 226);
+    outline-offset: 2px;
+}
+
+.left {
+    display: flex;
+    width: 45%;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+.left p {
+    display: flex;
+    left: 0;
+    font-size: 1rem;
+}
+
+.right p {
+    display: flex;
+    left: 0;
+    font-size: 1rem;
+}
+
+.right {
+    display: flex;
+    width: 45%;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+#id-create-btn {
+    display: flex;
+    width: 50%;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: #303030;
+    border: solid 1px #888;
+    justify-content: center;
+    outline: none;
+    color: white;
+}
+
+#id-create-btn:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+    cursor: pointer;
+}
