@@ -11,6 +11,10 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
     backgroundColor: "#E4E4E4",
+    height: "auto",
+    left: "0",
+    marginTop: "0",
+    // margin: "0 auto",
   },
 });
 
