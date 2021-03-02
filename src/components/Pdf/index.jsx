@@ -1,12 +1,23 @@
 import React from "react";
 import Pdf from "react-to-pdf";
 import "./style.css";
+import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
+
+import { PDFViewer } from "@react-pdf/renderer";
 
 const ref = React.createRef();
+
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: "column",
+    backgroundColor: "#E4E4E4",
+  },
+});
 
 const PDF = (props) => {
   return (
     <>
+<<<<<<< HEAD
       <div className="document" ref={ref} style={{
         display: "flex",
         maxWidth: "793px",
@@ -17,6 +28,11 @@ const PDF = (props) => {
         fontFamily: "montserrat",
         border:"solid 5px"
       }}>
+=======
+      {/* <PDFViewer>
+        <View> */}
+      <div size="A4" className="document" ref={ref} style={styles.page}>
+>>>>>>> 30b9f50c3b59c8d68e63b98830b170396542faf2
         <div className="header">
           <h1>header</h1>
         </div>
@@ -38,7 +54,27 @@ const PDF = (props) => {
             <h1>{props.end}</h1>
             <h2>Local de retirado do produto:</h2>
             <h1>{props.retirada}</h1>
+<<<<<<< HEAD
         </div>
+=======
+
+            <p>INFORMAÇÃO GERAL</p>
+            <h2>Nome do projeto:</h2>
+            <h1>{props.project}</h1>
+            <h2>Nome do proprietário:</h2>
+            <h1>{props.firstname}</h1>
+            <h2>Sobrenome do proprietário:</h2>
+            <h1>{props.lastname}</h1>
+            <h2>Email do proprietário:</h2>
+            <h1>{props.email}</h1>
+            <h2>Contato do proprietário:</h2>
+            <h1>{props.contact}</h1>
+            <h2>Endereço do proprietário:</h2>
+            <h1>{props.end}</h1>
+            <h2>Local de retirado do produto:</h2>
+            <h1>{props.retirada}</h1>
+          </div>
+>>>>>>> 30b9f50c3b59c8d68e63b98830b170396542faf2
           <div className="right">
             <p>INFORMAÇÃO TÉCNICA</p>
             <h2>Produto:</h2>
@@ -60,6 +96,12 @@ const PDF = (props) => {
           </div>
           <h3>SÃO PAULO</h3>
         </div>
+<<<<<<< HEAD
+=======
+      </div>
+      {/* </View>
+      </PDFViewer> */}
+>>>>>>> 30b9f50c3b59c8d68e63b98830b170396542faf2
 
 
         <Pdf targetRef={ref} filename="form.pdf">

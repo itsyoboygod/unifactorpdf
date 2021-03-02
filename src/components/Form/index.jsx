@@ -202,7 +202,6 @@ export default class Form extends Component {
         ) : (
           <>
             <PDF
-              className="pdf"
               project={this.state.project}
               firstname={this.state.firstname}
               lastname={this.state.lastname}
@@ -214,7 +213,10 @@ export default class Form extends Component {
               units={this.state.units}
               weight={this.state.weight}
               color={this.state.color}
+<<<<<<< HEAD:src/components/Form/index.jsx
               
+=======
+>>>>>>> 30b9f50c3b59c8d68e63b98830b170396542faf2:src/components/Post/index.jsx
             />
           </>
         )}
