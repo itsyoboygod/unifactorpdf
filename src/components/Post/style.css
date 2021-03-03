@@ -1,5 +1,5 @@
-/* @media (max-width: 800px) {
-    .form-inputs {
+@media (max-width: 800px) {
+    .form-container form{
         flex-direction: column !important;
     }
     .left {
@@ -8,75 +8,51 @@
     .right {
         width: 100% !important;
     }
-    #id-btn-form {
+    #id-create-btn {
         width: 100% !important;
     }
-} */
+}
 
 .form-container {
-    padding-top: 0;
     display: flex;
-    background-color: #303030;
-    color: white;
-}
-
-.form {
-    display: flex;
-    margin: 0;
-    padding: 0;
     width: 100%;
     flex-direction: column;
+    color: white;
     align-items: center;
-    justify-content: center;
+    margin: auto;
+
 }
 
-.form-inputs {
+.form-container form{
     display: flex;
-    margin: 0;
-    padding: 0;
-    flex-direction: row;
     width: 100%;
+    flex-direction: row; 
     justify-content: space-evenly;
 }
 
-.left {
-    width: 45%;
-}
-
-.right {
-    width: 45%;
-}
-
-.form-inputs h3 {
-    margin: 10px;
-    padding: 0;
-    width: fit-content;
-}
-
-.form-inputs input {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 40px;
-    font-family: monospace;
-    font-size: 2rem;
-    /* background-color: #888; */
-}
-
-.form-inputs input:focus {
-    outline: 3px solid #1670be;
-    border-radius: 3px;
-    outline-offset: 3px !important;
-}
-
-.fieldset {
+.left{
     display: flex;
-    width: 95%;
+    width: 45%;
     flex-direction: column;
-    align-items: center;
+
 }
 
-#id-btn-form {
+.right{
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+
+}
+
+.form-container form input{
+    height: 30px;
+}
+
+
+
+
+
+#id-create-btn {
     display: flex;
     width: 50%;
     height: 40px;
@@ -92,14 +68,8 @@
     font-size: 2rem;
 }
 
-#id-btn-form:hover {
+#id-create-btn:hover {
     cursor: pointer;
     opacity: 0.5;
     transition: 0.5s;
-}
-
-.pdf {
-    margin: 0;
-    height: 1000px;
-    background-color: rgb(243, 243, 244);
 }

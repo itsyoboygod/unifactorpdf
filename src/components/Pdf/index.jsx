@@ -1,66 +1,126 @@
 import React from "react";
 import Pdf from "react-to-pdf";
 import "./style.css";
+import {
+  Page,
+  Text,
+  View,
+  Document,
+  PDFViewer,
+  StyleSheet,
+  Font,
+  // source
+} from "@react-pdf/renderer";
+
+import source from "../Pdf/Fonts/Roboto-Italic.ttf"
+
+// Register font
+Font.register(
+ { src: source, family: 'Roboto-Italic'}
+);
+
 
 const ref = React.createRef();
 
-const PDF = (props) => {
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: "row",
+    backgroundColor: "#E4E4E4",
+    minHeight: "100%",
+  },
+});
+
+const Doc = (props) => (
+  <Document>
+    <Page size="A4">
+      <View ref={ref}>
+        <View className="header">
+          <Text style={{ margin: "auto", padding: "10px", top: 0}}>
+            header
+          </Text>
+        </View>
+
+        <View
+          className="post"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            width: "100%",
+            margin: "auto",
+          }}
+        >
+          <View className="left" style={{ margin: "auto", width: "45%" }}>
+            <Text style={{ margin: "10px" }}>INFORMAÇÃO GERAL</Text>
+            <Text>Nome do projeto:</Text>
+            <Text>{props.project}</Text>
+            <Text>Nome do proprietário:</Text>
+            <Text>{props.firstname}</Text>
+            <Text>Sobrenome do proprietário:</Text>
+            <Text>{props.lastname}</Text>
+            <Text>Email do proprietário:</Text>
+            <Text>{props.email}</Text>
+            <Text>Contato do proprietário:</Text>
+            <Text>{props.contact}</Text>
+            <Text>Endereço do proprietário:</Text>
+            <Text>{props.end}</Text>
+            <Text>Local de retirado do produto:</Text>
+            <Text>{props.retirada}</Text>
+          </View>
+          <View className="right" style={{ margin: "auto", width: "45%" }}>
+            <Text style={{ margin: "10px" }}>INFORMAÇÃO TÉCNICA</Text>
+            <Text>Produto:</Text>
+            <Text>{props.product}</Text>
+            <Text>Unidades:</Text>
+            <Text>{props.units}</Text>
+            <Text>Peso do produto:</Text>
+            <Text>{props.weight}</Text>
+            <Text>Cor do produto:</Text>
+            <Text>{props.color}</Text>
+            <Text>Cor do produto:</Text>
+            <Text>{props.color}</Text>
+            <Text>Cor do produto:</Text>
+            <Text>{props.color}</Text>
+            <Text>Cor do produto:</Text>
+            <Text>{props.color}</Text>
+          </View>
+        </View>
+
+        <View className="footer" style={{ margin: "50px" }}>
+          <View
+            className="uni-logo"
+            style={{ flexDirection: "row", margin: "auto" }}
+          >
+            <Text>UNIFACTOR</Text>
+            <Text>3D</Text>
+          </View>
+          <Text style={{ margin: "auto", fontFamily: 'Roboto-Italic' }}>SÃO PAULO</Text>
+        </View>
+      </View>
+    </Page>
+  </Document>
+);
+
+// {({ toPdf }) => (
+//   <button id="create-pdf" onClick={toPdf} target="_blank">
+//     Create PDF
+//   </button>
+// )}
+
+function PDF(props) {
   return (
-    <>
-      <div className="document" ref={ref}>
-        <div className="header">
-          <h1>header</h1>
-        </div>
-
-        <div className="post">
-          <div className="left">
-            <p>INFORMAÇÃO GERAL</p>
-            <h2>Nome do projeto:</h2>
-            <h1>{props.project}</h1>
-            <h2>Nome do proprietário:</h2>
-            <h1>{props.firstname}</h1>
-            <h2>Sobrenome do proprietário:</h2>
-            <h1>{props.lastname}</h1>
-            <h2>Email do proprietário:</h2>
-            <h1>{props.email}</h1>
-            <h2>Contato do proprietário:</h2>
-            <h1>{props.contact}</h1>
-            <h2>Endereço do proprietário:</h2>
-            <h1>{props.end}</h1>
-            <h2>Local de retirado do produto:</h2>
-            <h1>{props.retirada}</h1>
-          </div>
-          <div className="right">
-            <p>INFORMAÇÃO TÉCNICA</p>
-            <h2>Produto:</h2>
-            <h1>{props.product}</h1>
-            <h2>Unidades:</h2>
-            <h1>{props.units}</h1>
-            <h2>Peso do produto:</h2>
-            <h1>{props.weight}</h1>
-            <h2>Cor do produto:</h2>
-            <h1>{props.color}</h1>
-          </div>
-        </div>
-
-        <div className="footer">
-          <div className="uni-logo">
-            <p>UNIFACTOR</p>
-            <span>3D</span>
-          </div>
-          <h3>SÃO PAULO</h3>
-        </div>
-      </div>
-
-      <Pdf targetRef={ref} filename="post.pdf">
-        {({ toPdf }) => (
-          <button id="create-pdf" onClick={toPdf} target="_blank">
-            Create PDF
-          </button>
-        )}
-      </Pdf>
-    </>
+    <div style={{ height: "99vh" }}>
+      <PDFViewer
+        size="A4"
+        targetRef={ref}
+        filename="post.pdf"
+        height="100%"
+        width="99.7%"
+      >
+        <Doc props={props}/> 
+        
+      </PDFViewer>
+    </div>
   );
-};
+}
 
 export default PDF;
