@@ -75,7 +75,11 @@ class Post extends Component {
                   name="end"
                   placeholder="Ex: Av. Maria Coelho Aguiar"
                 />
+<<<<<<< HEAD
                 <p>Endereço de entrega:</p>
+=======
+                <p>Endereço do local da entrega:</p>
+>>>>>>> c2a7b226cef742fbe1adbbb9781f7b44dfc49798
                 <input
                   onChange={this.onChange("retirada")}
                   name="retirada"
@@ -137,4 +141,8 @@ class Post extends Component {
   }
 }
 
+<<<<<<< HEAD
 export default Post;
+=======
+export default Post;
+>>>>>>> c2a7b226cef742fbe1adbbb9781f7b44dfc49798
