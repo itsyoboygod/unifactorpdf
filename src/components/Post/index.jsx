@@ -6,9 +6,9 @@ import "./style.css";
 
 class Post extends Component {
   state = {
-    project: "",
+    titleproj: "",
     firstname: "",
-    lasttname: "",
+    lastname: "",
     email: "",
     contact: "",
     end: "",
@@ -42,7 +42,7 @@ class Post extends Component {
                 <p>Nome do projeto:</p>
                 <input
                   onChange={this.onChange("project")}
-                  name="project"
+                  name="titleproj"
                   placeholder="Ex: SpaceX"
                 />
                 <p>Nome do cliente:</p>
@@ -53,8 +53,8 @@ class Post extends Component {
                 />
                 <p>Sobrenome do cliente:</p>
                 <input
-                  onChange={this.onChange("lasttname")}
-                  name="lasttname"
+                  onChange={this.onChange("lastname")}
+                  name="lastname"
                   placeholder="Ex: Kaique"
                 />
                 <p>E-mail:</p>
@@ -75,11 +75,7 @@ class Post extends Component {
                   name="end"
                   placeholder="Ex: Av. Maria Coelho Aguiar"
                 />
-<<<<<<< HEAD
-                <p>Endereço de entrega:</p>
-=======
                 <p>Endereço do local da entrega:</p>
->>>>>>> c2a7b226cef742fbe1adbbb9781f7b44dfc49798
                 <input
                   onChange={this.onChange("retirada")}
                   name="retirada"
@@ -126,9 +122,9 @@ class Post extends Component {
           </div>
         ) : (
           <PDF
-            title={this.state.product}
+            title={this.state.titleproj}
             firstname={this.state.firstname}
-            lasttname={this.state.lasttname}
+            lastname={this.state.lastname}
             product={this.state.product}
             project={this.state.project}
             units={this.state.units}
@@ -141,8 +137,4 @@ class Post extends Component {
   }
 }
 
-<<<<<<< HEAD
 export default Post;
-=======
-export default Post;
->>>>>>> c2a7b226cef742fbe1adbbb9781f7b44dfc49798

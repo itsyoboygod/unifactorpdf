@@ -1,9 +1,5 @@
 @media (max-width: 800px) {
-<<<<<<< HEAD
     .form-container form {
-=======
-    .form-container form{
->>>>>>> c2a7b226cef742fbe1adbbb9781f7b44dfc49798
         flex-direction: column !important;
     }
     .left {
@@ -19,99 +15,37 @@
 
 .form-container {
     display: flex;
-<<<<<<< HEAD
-    width: 90%;
-    margin: 0 auto;
-    padding: 0;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-}
-
-.form-container form {
-    display: flex;
-=======
     width: 100%;
     flex-direction: column;
     color: white;
     align-items: center;
     margin: auto;
-
 }
 
-.form-container form{
+.form-container form {
     display: flex;
     width: 100%;
-    flex-direction: row; 
->>>>>>> c2a7b226cef742fbe1adbbb9781f7b44dfc49798
+    flex-direction: row;
     justify-content: space-evenly;
     flex-direction: row;
-}
-
-<<<<<<< HEAD
-.form-container form input {
-    display: flex;
-    height: 40px;
-    border: none;
-}
-
-.form-container form input:focus {
-    outline: solid 3px rgb(50, 159, 226);
-    outline-offset: 2px;
 }
 
 .left {
     display: flex;
     width: 45%;
-    margin: 0;
-    padding: 0;
     flex-direction: column;
-}
-
-.left p {
-    display: flex;
-    left: 0;
-    font-size: 1rem;
-}
-
-.right p {
-    display: flex;
-    left: 0;
-    font-size: 1rem;
 }
 
 .right {
     display: flex;
     width: 45%;
-    margin: 0;
-    padding: 0;
     flex-direction: column;
 }
 
-=======
-.left{
-    display: flex;
-    width: 45%;
-    flex-direction: column;
-
-}
-
-.right{
-    display: flex;
-    width: 45%;
-    flex-direction: column;
-
-}
-
-.form-container form input{
+.form-container form input {
     height: 30px;
 }
 
-
-
-
-
->>>>>>> c2a7b226cef742fbe1adbbb9781f7b44dfc49798
 #id-create-btn {
     display: flex;
     width: 50%;
@@ -125,13 +59,7 @@
 }
 
 #id-create-btn:hover {
-<<<<<<< HEAD
-    opacity: 0.5;
-    transition: 0.5s;
-    cursor: pointer;
-=======
     cursor: pointer;
     opacity: 0.5;
     transition: 0.5s;
->>>>>>> c2a7b226cef742fbe1adbbb9781f7b44dfc49798
 }

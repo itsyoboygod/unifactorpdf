@@ -6,7 +6,7 @@ import "./style.css";
 function Doc() {
   return (
     <div className="Doc">
-      <Post />
+      <Post props={props} />
     </div>
   );
 }
