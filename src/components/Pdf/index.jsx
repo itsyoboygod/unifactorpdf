@@ -13,12 +13,24 @@ import {
   // source
 } from "@react-pdf/renderer";
 
-import source from "../Pdf/Fonts/Roboto-Italic.ttf";
+import source1 from "../Pdf/Fonts/Roboto-Italic.ttf";
+import source2 from "../Pdf/Fonts/Monoton-Regular.ttf";
+import source3 from "../Pdf/Fonts/Roboto-Bold.ttf";
+
+
+
 
 // Register font
-Font.register({ src: source, family: "Roboto-Italic" });
+Font.register({ src: source1, family: "Roboto-Italic" });
+Font.register({ src: source2, family: "Monoton-Regular", });
+Font.register({ src: source3, family: "Roboto-Bold", });
+
+
+
 
 const ref = React.createRef();
+
+var date = new Date().toJSON().slice(0,10).replace(/-/g,'/');
 
 const styles = StyleSheet.create({
   page: {
@@ -61,7 +73,7 @@ const Doc = (props) => (
             display: "flex",
             flexDirection: "row",
             width: "100%",
-            margin: "auto",
+            margin: "auto"
           }}
         >
           <View className="left" style={{ margin: "auto", width: "45%" }}>
@@ -80,6 +92,10 @@ const Doc = (props) => (
             <Text>{props.end}</Text>
             <Text>Local de retirado do produto:</Text>
             <Text>{props.retirada}</Text>
+            <View style={{ textAlign: "center" }}>
+              <Text>_______________________</Text>
+              <Text>Assinatura do cliente</Text>
+            </View>
           </View>
           <View className="right" style={{ margin: "auto", width: "45%" }}>
             <Text style={{ margin: "10px" }}>INFORMAÇÃO TÉCNICA</Text>
@@ -97,24 +113,35 @@ const Doc = (props) => (
             <Text>{props.color}</Text>
             <Text>Cor do produto:</Text>
             <Text>{props.color}</Text>
+            <View style={{ textAlign: "center" }}>
+              <Text>_______________________</Text>
+              <Text>Assinatura do representante</Text>
+            </View>
           </View>
         </View>
 
-        <View className="footer" style={{ margin: "50px" }}>
+        <View className="footer" style={{ margin: "50px", }}>
           <View
             className="uni-logo"
             style={{ flexDirection: "row", margin: "auto" }}
           >
-            <Text>UNIFACTOR</Text>
-            <Text>3D</Text>
+            <Text style={{
+              fontFamily: "Roboto-Bold",
+              margin: "5px",
+
+            }}>UNIFACTOR</Text>
+            <Text style={{
+              margin: "auto",
+              fontFamily: "Monoton-Regular",
+            }}>3D</Text>
           </View>
           <Text
             style={{
-              margin: "auto",
+              textAlign: "center",
               fontFamily: "Roboto-Italic",
             }}
           >
-            SÃO PAULO
+            SÃO PAULO {date}
           </Text>
         </View>
       </View>
