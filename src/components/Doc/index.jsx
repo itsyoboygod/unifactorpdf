@@ -3,7 +3,7 @@ import Post from "../Post";
 
 import "./style.css";
 
-function Doc() {
+function Doc(props) {
   return (
     <div className="Doc">
       <Post props={props} />

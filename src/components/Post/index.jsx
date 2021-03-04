@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Doc from "../Pdf";
 import PDF from "../Pdf";
+import MyQRCode from "../QRcode";
 
 import "./style.css";
 
@@ -26,6 +27,7 @@ class Post extends Component {
   };
 
   submmitPost = (e) => {
+    console.log(this.state);
     this.setState({
       postSubmmited: true,
     });
@@ -41,7 +43,7 @@ class Post extends Component {
                 <h1>INFORMAÇÃO GERAL</h1>
                 <p>Nome do projeto:</p>
                 <input
-                  onChange={this.onChange("project")}
+                  onChange={this.onChange("titleproj")}
                   name="titleproj"
                   placeholder="Ex: SpaceX"
                 />
@@ -65,8 +67,8 @@ class Post extends Component {
                 />
                 <p>Número de contato:</p>
                 <input
-                  onChange={this.onChange("phone")}
-                  name="phone"
+                  onChange={this.onChange("contact")}
+                  name="contact"
                   placeholder="Ex: 9 1234-5678"
                 />
                 <p>Endereço do cliente:</p>
@@ -86,8 +88,8 @@ class Post extends Component {
                 <h1>INFORMAÇÃO TÉCNICA</h1>
                 <p>Produto:</p>
                 <input
-                  onChange={this.onChange("produto")}
-                  name="produto"
+                  onChange={this.onChange("product")}
+                  name="product"
                   placeholder="Ex: cubo"
                 />
                 <p>Cor:</p>
@@ -119,13 +121,20 @@ class Post extends Component {
             <button id="id-create-btn" onClick={this.submmitPost} type="submit">
               Done
             </button>
+
+            {/* <MyQRCode /> */}
           </div>
         ) : (
           <PDF
-            title={this.state.titleproj}
+            titleproj={this.state.titleproj}
             firstname={this.state.firstname}
             lastname={this.state.lastname}
+            email={this.state.email}
+            contact={this.state.contact}
+            end={this.state.contact}
+            retirada={this.state.retirada}
             product={this.state.product}
+            end={this.state.end}
             project={this.state.project}
             units={this.state.units}
             color={this.state.color}
