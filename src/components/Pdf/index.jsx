@@ -1,7 +1,7 @@
 import React from "react";
-import Pdf from "react-to-pdf";
+// import Pdf from "react-to-pdf";
 import "./style.css";
-import MyQRCode from "../QRcode";
+// import MyQRCode from "../QRcode";
 
 import {
   Page,
@@ -36,12 +36,14 @@ const styles = StyleSheet.create({
   },
 
   pageBackground: {
-    position: "absolute",
-    minWidth: "100%",
-    minHeight: "100%",
     display: "block",
-    height: "100%",
-    width: "100%",
+    position: "absolute",
+    height: "99.99vh",   
+    width: "99.99vw"
+  },
+
+  titles:{
+    source1
   },
   // container: {
   //   background:
@@ -59,9 +61,13 @@ const Doc = (props) => {
   return (
     <Document>
       <Page size="A4">
+        {/* <Image
+        src="https://avatars.githubusercontent.com/u/58955082?s=460&u=3d9b29530643113cb524d34984e5c32309e60cad&v=4"
+        style={styles.pageBackground}
+        ></Image> */}
         <Image
-        // src="https://avatars.githubusercontent.com/u/58955082?s=460&u=3d9b29530643113cb524d34984e5c32309e60cad&v=4"
-        // style={styles.pageBackground}
+        src="https://previews.123rf.com/images/artefy/artefy1103/artefy110300007/9216253-arri%C3%A8re-plan-de-document-s%C3%A9curis%C3%A9-.jpg?fj=1"
+        style={styles.pageBackground}
         ></Image>
         <View ref={ref} style={{ width: "100%" }}>
           <View className="header">
@@ -90,7 +96,7 @@ const Doc = (props) => {
               <Text style={{ margin: "10px", fontWeight: "bold" }}>
                 INFORMAÇÃO GERAL
               </Text>
-              <Text>Nome do projeto:</Text>
+              <Text style={{fontFamily: "Roboto-Italic"}}>Nome do projeto:</Text>
               <Text>{props.titleproj}</Text>
               <Text>Nome do proprietário:</Text>
               <Text>{props.firstname}</Text>
@@ -136,9 +142,7 @@ const Doc = (props) => {
             </View>
             <View style={{}}>
               <Text>_______________________</Text>
-              <Text style={{ margin: "auto" }}>
-                Assinatura do representante
-              </Text>
+              <Text style={{ margin: "auto" }}>Assinatura do representante</Text>
             </View>
           </View>
           <View className="footer" style={{ margin: "50px" }}>
@@ -195,7 +199,7 @@ function PDF(props) {
     <div style={{ height: "99vh" }}>
       <PDFViewer
         size="A4"
-        targetRef={ref}
+        targetref={ref}
         filename="post.pdf"
         height="100%"
         width="99.7%"

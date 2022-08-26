@@ -1,8 +1,8 @@
 import React from "react";
 import Post from "./components/Post";
-import MyDocument from "./components/React_Pdf";
-import { PDFViewer } from "@react-pdf/renderer";
-import { render } from "@testing-library/react";
+// import MyDocument from "./components/React_Pdf";
+// import { PDFViewer } from "@react-pdf/renderer";
+// import { render } from "@testing-library/react";
 
 function App() {
   return (

@@ -131,7 +131,7 @@ class Post extends Component {
             lastname={this.state.lastname}
             email={this.state.email}
             contact={this.state.contact}
-            end={this.state.contact}
+            // end={this.state.contact}
             retirada={this.state.retirada}
             product={this.state.product}
             end={this.state.end}
