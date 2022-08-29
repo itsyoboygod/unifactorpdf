@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Doc from "../Pdf";
+// import Doc from "../Pdf";
 import PDF from "../Pdf";
-import MyQRCode from "../QRcode";
+// import MyQRCode from "../QRcode";
 
 import "./style.css";
 
