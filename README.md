@@ -1,3 +1,6 @@
+#About:
+This is a presentation of a form and turning the input values into a PDF file made with ReactJS
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
