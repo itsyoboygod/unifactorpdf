@@ -31,7 +31,7 @@ var date = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
 const styles = StyleSheet.create({
   page: {
     flexDirection: "row",
-    backgroundColor: "#E4E4E4",
+    // backgroundColor: "#E4E4E4",
     minHeight: "100%",
   },
 
@@ -44,11 +44,7 @@ const styles = StyleSheet.create({
 
   titles:{
     source1
-  },
-  // container: {
-  //   background:
-  //     'url("https://avatars.githubusercontent.com/u/58955082?s=460&u=3d9b29530643113cb524d34984e5c32309e60cad&v=4") no-repeat center center fixed',
-  // },
+  }
 });
 
 const Doc = (props) => {
@@ -61,121 +57,214 @@ const Doc = (props) => {
   return (
     <Document>
       <Page size="A4">
-        {/* <Image
-        src="https://avatars.githubusercontent.com/u/58955082?s=460&u=3d9b29530643113cb524d34984e5c32309e60cad&v=4"
-        style={styles.pageBackground}
-        ></Image> */}
         <Image
-        src="https://previews.123rf.com/images/artefy/artefy1103/artefy110300007/9216253-arri%C3%A8re-plan-de-document-s%C3%A9curis%C3%A9-.jpg?fj=1"
-        style={styles.pageBackground}
+          src="https://previews.123rf.com/images/artefy/artefy1103/artefy110300007/9216253-arri%C3%A8re-plan-de-document-s%C3%A9curis%C3%A9-.jpg?fj=1"
+          style={styles.pageBackground}
         ></Image>
-        <View ref={ref} style={{ width: "100%" }}>
-          <View className="header">
-            <Text
-              style={{
-                margin: "auto",
-                padding: "10px",
-                top: 0,
-                // border: 5,
-              }}
-            >
-              header
-            </Text>
-          </View>
+        <View ref={ref} style={{
+              minHeight:"99%", 
+              display:"flex", 
+              justifyContent:"space-between", 
+              margin:"0 auto",
+              // backgroundColor:"lightblue"
+              }}>
 
-          <View
-            className="post"
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              width: "100%",
-              margin: "auto",
-            }}
-          >
-            <View className="left" style={{ margin: "auto", width: "45%" }}>
-              <Text style={{ margin: "10px", fontWeight: "bold" }}>
-                INFORMAÇÃO GERAL
-              </Text>
-              <Text style={{fontFamily: "Roboto-Italic"}}>Nome do projeto:</Text>
-              <Text>{props.titleproj}</Text>
-              <Text>Nome do proprietário:</Text>
-              <Text>{props.firstname}</Text>
-              <Text>Sobrenome do proprietário:</Text>
-              <Text>{props.lastname}</Text>
-              <Text>Email do proprietário:</Text>
-              <Text>{props.email}</Text>
-              <Text>Contato do proprietário:</Text>
-              <Text>{props.contact}</Text>
-              <Text>Endereço do proprietário:</Text>
-              <Text>{props.end}</Text>
-              <Text>Local de retirado do produto:</Text>
-              <Text>{props.retirada}</Text>
+{/* ------------- BODY */}
+          <View className="body" style={{
+             width:"100vw",
+             display:"flex", 
+             justifyContent:"center", 
+             flexDirection:"column",
+             margin:"0 auto",
+            //  backgroundColor:"green",
+             
+             }}>
+
+              {/* ------------- HEADER */}
+              <View className="header">
+                <Text style={{
+                    margin: "0 auto",
+                    padding: "30px",
+                    fontSize:"25px",
+                    fontFamily: "Roboto-Bold",
+                    // backgroundColor:"pink"
+                  }}>
+                  RESUME
+                </Text>
+              </View>
+
+              <View className="header" style={{
+                  margin:"10px 100px 10px 100px",
+                  // backgroundColor:"gray",
+                  alignSelf:"center",
+                }}>
+                <Text style={{
+                        margin:"10px"
+                      }}>
+                  <h5>
+                    <p style={{
+                        fontSize:"10px"
+                      }}>
+                      What is Lorem Ipsum
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type 
+                        specimen book. It has survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged. 
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </h5>
+                </Text>
+              </View>
+
+              <View className="left-right" style={{
+                  display:"flex",
+                  flexDirection:"row", 
+                  // backgroundColor:"grey",
+                  justifyContent:"center",
+                  alignContent:"center",
+                  width:"100%",
+                  fontSize:"10px"
+                }}>
+
+                  <View className="left" style={{ 
+                      display:"flex",
+                      flexDirection:"column", 
+                      width: "45%",
+                      top:"0",
+                      minHeight:"50%",
+                      alignItems:"flex-start",
+                      // backgroundColor:"red",
+                      padding:"30px",
+                      }}>
+                    <Text style={{ 
+                      margin: "10px auto", 
+                      fontFamily: "Roboto-Bold",
+                      // backgroundColor:"lightgreen"
+                      }}>
+                      INFORMAÇÃO GERAL
+                    </Text>
+                    <View style={{
+                        margin:"20px auto",
+                        // backgroundColor:"yellow",
+                        justifyContent:"space-evenly",
+                        minHeight:"100px"
+                      }}>
+                      <Text>Nome do projeto:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.titleproj}</Text>
+                      <Text>Nome do proprietário:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.firstname}</Text>
+                      <Text>Sobrenome do proprietário:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.lastname}</Text>
+                      <Text>Email do proprietário:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.email}</Text>
+                      <Text>Contato do proprietário:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.contact}</Text>
+                      <Text>Endereço do proprietário:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.end}</Text>
+                      <Text>Local de retirada do produto:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.retirada}</Text>
+                    </View>
+                  </View>
+                  <View className="right" style={{ 
+                      display:"flex",
+                      flexDirection:"column", 
+                      width: "45%",
+                      top:"0",
+                      minHeight:"50%",
+                      alignItems:"flex-start",
+                      // backgroundColor:"blue",
+                      padding:"30px",
+                    }}>
+                    <Text style={{
+                      //  margin: "10px 0px 0px 30px", 
+                      margin: "10px auto", 
+                      fontFamily: "Roboto-Bold", 
+                      display:"flex", 
+                      // backgroundColor:"lightgreen"
+                      }}>
+                        INFORMAÇÃO TÉCNICA
+                    </Text>
+                    <View style={{
+                        margin:"20px auto",
+                        // backgroundColor:"yellow",
+                        justifyContent:"space-evenly",
+                        minHeight:"100px"
+                      }}>
+                      <Text>Produto:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.product}</Text>
+                      <Text>Cor do produto:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.color}</Text>
+                      <Text>Peso do produto:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.weight}</Text>
+                      <Text>Dimensões do produto:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.dimen}</Text>
+                      <Text>Unidades:</Text>
+                      <Text style={{fontFamily: "Roboto-Italic"}}> {props.units}</Text>
+                    </View>
+                  </View>
+              </View>
             </View>
-            <View className="right" style={{ margin: "auto", width: "45%" }}>
-              <Text style={{ margin: "10px" }}>INFORMAÇÃO TÉCNICA</Text>
-              <Text>Produto:</Text>
-              <Text>{props.product}</Text>
-              <Text>Unidades:</Text>
-              <Text>{props.units}</Text>
-              <Text>Peso do produto:</Text>
-              <Text>{props.weight}</Text>
-              <Text>Cor do produto:</Text>
-              <Text>{props.color}</Text>
-              <Text>Cor do produto:</Text>
-              <Text>{props.color}</Text>
-              <Text>Cor do produto:</Text>
-              <Text>{props.color}</Text>
-              <Text>Cor do produto:</Text>
-              <Text>{props.color}</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-around",
-            }}
-          >
-            <View>
-              <Text>_______________________</Text>
-              <Text style={{ margin: "auto" }}>Assinatura do cliente</Text>
-            </View>
-            <View style={{}}>
-              <Text>_______________________</Text>
-              <Text style={{ margin: "auto" }}>Assinatura do representante</Text>
-            </View>
-          </View>
-          <View className="footer" style={{ margin: "50px" }}>
-            <View
-              className="uni-logo"
-              style={{ flexDirection: "row", margin: "auto" }}
-            >
-              <Text
-                style={{
-                  fontFamily: "Roboto-Bold",
-                  margin: "5px",
-                }}
-              >
-                UNIFACTOR
-              </Text>
-              <Text
-                style={{
-                  margin: "auto",
-                  fontFamily: "Monoton-Regular",
-                  // color: "blue",
-                }}
-              >
-                3D
-              </Text>
-            </View>
-            <Text
-              style={{
-                textAlign: "center",
-                fontFamily: "Roboto-Italic",
-              }}
-            >
-              SÃO PAULO {date}
-            </Text>
+{/* ------------- FOOTER */}
+          <View className="footer" style={{
+                display: "flex",
+                margin:"0 auto",
+                flexDirection:"column",
+                bottom:"0px",
+                left:"0",
+                right:"0",
+              }}>
+              <View style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-evenly",
+                  width:"100vw",
+                  margin:"20px auto",
+                  fontSize:"13px"
+                }}>
+                <View>
+                  <Text>_______________________</Text>
+                  <Text style={{ margin: "auto" }}>Assinatura do cliente</Text>
+                </View>
+                <View>
+                  <Text>_______________________</Text>
+                  <Text style={{ margin: "auto" }}>Assinatura do representante</Text>
+                </View>
+              </View>
+              <View style={{ 
+                 margin: "50px", 
+                 bottom:"0", 
+                 display:"flex", 
+                 justifyContent:"center", 
+                 alignItems:"center",
+                 fontSize:"13px"
+                 }}>
+                <View className="uni-logo" style={{ flexDirection: "row", margin: "auto" }}>
+                  <Text style={{
+                      fontFamily: "Roboto-Bold",
+                      margin: "5px",
+                    }}>
+                    UNIFACTOR
+                  </Text>
+                  <Text style={{
+                      margin: "auto",
+                      fontFamily: "Monoton-Regular",
+                      // color: "blue",
+                    }}>
+                    3D
+                  </Text>
+                </View>
+                <Text style={{
+                    display: "flex",
+                    textAlign: "center",
+                    fontFamily: "Roboto-Italic",
+                    margin:"0 auto",
+                    justifyContent:"center"                    
+                  }}>
+                  SÃO PAULO {date}
+                </Text>
+              </View>
           </View>
         </View>
       </Page>

@@ -15,9 +15,11 @@ class Post extends Component {
     end: "",
     retirada: "",
     product: "",
-    units: "",
-    weight: "",
     color: "",
+    weight: "",
+    dimen: "",
+    units: "",
+    material: "",
     postSubmmited: false,
   };
   onChange = (input) => (e) => {
@@ -116,12 +118,17 @@ class Post extends Component {
                   name="units"
                   placeholder="Ex: 20u"
                 />
+                <p>Material:</p>
+                <input
+                  onChange={this.onChange("material")}
+                  name="material"
+                  placeholder="Ex: plastic"
+                />
               </div>
             </form>
             <button id="id-create-btn" onClick={this.submmitPost} type="submit">
               Done
             </button>
-
             {/* <MyQRCode /> */}
           </div>
         ) : (
@@ -131,14 +138,14 @@ class Post extends Component {
             lastname={this.state.lastname}
             email={this.state.email}
             contact={this.state.contact}
-            // end={this.state.contact}
+            end={this.state.end}
             retirada={this.state.retirada}
             product={this.state.product}
-            end={this.state.end}
-            project={this.state.project}
-            units={this.state.units}
             color={this.state.color}
             weight={this.state.weight}
+            dimen={this.state.dimen}
+            units={this.state.units}
+            material={this.state.material}
           />
         )}
       </>

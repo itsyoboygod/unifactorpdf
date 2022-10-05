@@ -34,12 +34,17 @@
     display: flex;
     width: 45%;
     flex-direction: column;
+    top: 0;
+    margin: 20px 0;
 }
 
 .right {
     display: flex;
     width: 45%;
     flex-direction: column;
+    top: 0;
+    margin: 20px 0;
+
 }
 
 .form-container form input {
